@@ -1,24 +1,31 @@
-// DIA 8
-// Escribir un programa que pida al usuario dos números y los sume. ¡Pero esta vez hazlo en C++! :)
+// DIA 9
+// Ordenamiento de un Array: Escribir un programa que ordene un array de enteros utilizando ¡Pero hazlo en C++! :)
 
-# include <iostream>
-using namespace std; 
+#include <iostream>
+#include <algorithm>
+#include <vector>
 
-int main()  { 
-    int numero;
-    int numero2;
-    int suma;
+// por rasones de conpatibilidad por si acaso se asigna el espacio de nombre "std"
+using namespace std;
 
-    cout<< "por favor ingrese dos numero: ";
-    cin >> numero;
-    cout<< "el primer numero es: " << numero << endl;
-    cout<< "ingrese el segundo numero: ";
-    cin >> numero2;
-    cout<< "el segundo numero es: " << numero2 << endl;
+// comienza el programa principal
+int main() {
+    // se crea el vector y declara que tipo de verctor es, en este caso es "int"
+    // la variable vector se llama "vecto" y luego se le asigna los valores
+    std::vector<int> vecto = {1, 2, 6, 9, 4, 3};
 
-    suma = numero + numero2;
+    // se usa "sort", funcion de "algorithm" para poder ordenar los numeros enteros dentro del vector
+    std::sort(vecto.begin(), vecto.end());
 
-    cout<< "la suma de los dos numeros ingresados es: " << suma << endl;
+    // espacio para que quede mas lindo
+    std::cout << "\n" << "\n";
 
-    return 0;
+    // decir que se esta imprimiendo 
+    std::cout << "los numeros ordenados son: ";
+    
+    // se itera "num" dentro de los elementos de vecto ya ordenado 
+    for(int num : vecto) {
+        // cada "num" se imprime con un espacio " " para que sea mas legible
+        cout << num << " ";
+    }
 }
